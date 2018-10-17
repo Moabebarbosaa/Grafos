@@ -81,6 +81,7 @@ class TestGrafo(unittest.TestCase):
         self.assertEqual(set(arestas_sobre_vertice(self.g_p, 'C')), set(['a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7']))
         self.assertEqual(set(arestas_sobre_vertice(self.g_p, 'M')), set(['a6', 'a8']))
 
+       
     def test_eh_completo(self):
         self.assertFalse(eh_completo(self.g_p))
         self.assertFalse(eh_completo(self.g_p_sem_paralelas))
