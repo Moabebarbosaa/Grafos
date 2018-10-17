@@ -19,7 +19,6 @@ def vertices_nao_adjacentes(grafo):
     return lista
 
 
-
 def ha_laco(grafo):
 
     for i in range(len(grafo.M)):
