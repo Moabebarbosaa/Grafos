@@ -74,6 +74,7 @@ class Grafo:
         '''
         return Grafo.verticeValido(vertice) and self.N.count(vertice) > 0
 
+    
     def existeAresta(self, aresta=''):
         '''
         Verifica se uma aresta passada como parâmetro pertence ao grafo.
