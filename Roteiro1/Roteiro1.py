@@ -138,6 +138,7 @@ def eh_conexo(grafo):
     for i in range(len(dicionario[verticeComMaisLigacoes])):
         lista_maior.append(dicionario[verticeComMaisLigacoes][i])
 
+        
     for vertice in vertices:   # VERTIFICANDO SE É CONEXO OU NÃO ATRAVEZ DO VÉRTICE QUE TEM MAIS LIGAÇÕES.
         if vertice in lista_maior or verticeComMaisLigacoes == vertice:
             continue
