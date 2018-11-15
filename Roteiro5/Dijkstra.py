@@ -32,6 +32,7 @@ def dijkstra(vertices, arestas, u, v):
             if beta[vertice] == minimoBeta:
                 phi[vertice] = 1
                 w = vertice
+                
     atual = v
     lista = ""
     while atual != u:
@@ -40,7 +41,6 @@ def dijkstra(vertices, arestas, u, v):
                 lista += atual
                 lista += " > "
                 atual = pi[atual]
-
     lista += atual
 
     return lista[::-1]
