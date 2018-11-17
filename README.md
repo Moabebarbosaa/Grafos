@@ -15,5 +15,5 @@
 # Roteiro 3 - Caminho Euleriano
   - Usando o grafo de matriz de adjacência para determinar se um grafo possui um caminho euleriano.
 
-# Roteiro 4 - Algoritmo de alcançabilidade de Warshall
+# Roteiro 4 - Algoritmo de Alcançabilidade de Warshall
   - Usando o resultado da atividade 2, faça um programa para encontrar a matriz de alcançabilidade de um grafo usando o algoritmo de Warshall. 
