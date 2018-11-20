@@ -18,5 +18,5 @@
 # Roteiro 4 - Algoritmo de Alcançabilidade de Warshall
   - Usando o resultado da atividade 2, faça um programa para encontrar a matriz de alcançabilidade de um grafo usando o algoritmo de Warshall. 
  
-# Roteiro 5 - Algorítmo de Dijkstra
+# Roteiro 5 - Algoritmo de Dijkstra
   - Implementação de uma versão modificada do Dijkstra
