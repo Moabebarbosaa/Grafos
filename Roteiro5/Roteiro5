@@ -67,38 +67,38 @@ def dijkstraCarga(vertices, arestas, u, v, carga, pontosRecarga):
     pontosRecarga.insert(0, u)
     pontosRecarga.append(v)
 
-    if dijkstra(vertices, arestas, u, v)[0] <= carga:
-        return dijkstra(vertices, arestas, u, v)[1]
+    # if dijkstra(vertices, arestas, u, v)[0] <= carga:
+    #     return dijkstra(vertices, arestas, u, v)[1]
+    #
+    # else:
+    possibilidades = {}
 
-    else:
-        possibilidades = {}
+    for i in range(len(pontosRecarga)):
+        for j in range(len(pontosRecarga)):
+            if u == pontosRecarga[j] or dijkstra(vertices, arestas, u, pontosRecarga[j]) == False:
+                continue
+            caminho = dijkstra(vertices, arestas, u, pontosRecarga[j])[0]
+            if caminho <= carga:
+                possibilidades[u + "-" + pontosRecarga[j]] = caminho
+        u = pontosRecarga[i]
+        if i > 0:
+            carga = 5
 
-        for i in range(len(pontosRecarga)):
-            for j in range(len(pontosRecarga)):
-                if u == pontosRecarga[j] or dijkstra(vertices, arestas, u, pontosRecarga[j]) == False:
-                    continue
-                caminho = dijkstra(vertices, arestas, u, pontosRecarga[j])[0]
-                if caminho <= carga:
-                    possibilidades[u + "-" + pontosRecarga[j]] = caminho
-            u = pontosRecarga[i]
-            if i > 0:
-                carga = 5
+    lista = dijkstra(pontosRecarga, possibilidades, inicial, v)
 
-        lista = dijkstra(pontosRecarga, possibilidades, inicial, v)
+    if lista == False:
+        return "Não há caminho possíveis !!"
 
-        if lista == False:
-            return "Não há caminho possíveis !!"
+    caminhoFinal = []
+    for i in range(len(lista[1])-1):
+        caminhoFinal.append(dijkstra(vertices, arestas, lista[1][i], lista[1][i+1])[1])
 
-        caminhoFinal = []
-        for i in range(len(lista[1])-1):
-            caminhoFinal.append(dijkstra(vertices, arestas, lista[1][i], lista[1][i+1])[1])
+    Final = []
 
-        Final = []
-
-        for i in range(len(caminhoFinal)):
-            for j in range(len(caminhoFinal[i])):
-                if (caminhoFinal[i][j] not in Final):
-                    Final.append(caminhoFinal[i][j])
+    for i in range(len(caminhoFinal)):
+        for j in range(len(caminhoFinal[i])):
+            if (caminhoFinal[i][j] not in Final):
+                Final.append(caminhoFinal[i][j])
 
     return Final
 
@@ -116,4 +116,3 @@ print(dijkstraCarga(vertices, arestas, "A", "g", 4, ['L', 'S', 'U', 'a']))
 print(dijkstraCarga(vertices, arestas, "A", "g", 3, ['L', 'S', 'U', 'a']))
 print(dijkstraCarga(vertices, arestas, "A", "g", 2, ['L', 'S', 'U', 'a']))
 print(dijkstraCarga(vertices, arestas, "A", "g", 1, ['L', 'S', 'U', 'a']))
-print(dijkstraCarga(vertices, arestas, "A", "g", 0, ['L', 'S', 'U', 'a']))
