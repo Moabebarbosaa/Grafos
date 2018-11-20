@@ -21,8 +21,8 @@ def dijkstra(vertices, arestas, u, v):
         verificacao2 = 0
         for ligacoes in arestas:
             if (ligacoes[0] == w):
-                if phi[ligacoes[2]] == 0 and beta[ligacoes[2]] > beta[w] + 1:
-                    beta[ligacoes[2]] = beta[w] + 1
+                if phi[ligacoes[2]] == 0 and beta[ligacoes[2]] > beta[w] + arestas[ligacoes]:
+                    beta[ligacoes[2]] = beta[w] + arestas[ligacoes]
                     pi[ligacoes[2]] = w
                     verificacao2 += 1
 
@@ -87,7 +87,7 @@ def dijkstraCarga(vertices, arestas, u, v, carga, pontosRecarga):
     lista = dijkstra(pontosRecarga, possibilidades, inicial, v)
 
     if lista == False:
-        return "Não há caminho possíveis !!"
+        return "Não há caminhos possíveis !!"
 
     caminhoFinal = []
     for i in range(len(lista[1])-1):
@@ -111,8 +111,9 @@ arestas = {"A-B": 1, "A-C": 1, "A-D": 1, "B-E": 1, "B-I": 1, "C-G": 1, "D-C": 1,
            "U-Y": 1, "U-Z": 1, "V-b": 1, "V-Z": 1, "V-W": 1, "W-S": 1, "X-c": 1, "X-d": 1, "Y-a": 1, "a-e": 1, "c-e": 1,
            "c-W": 1, "e-f": 1, "e-g": 1, "T-S": 1}
 
-print(dijkstraCarga(vertices, arestas, "A", "g", 5, ['L', 'S', 'U', 'a']))
-print(dijkstraCarga(vertices, arestas, "A", "g", 4, ['L', 'S', 'U', 'a']))
+print(dijkstraCarga(vertices, arestas, "G", "X", 2, ['S', 'F']))
+print(dijkstraCarga(vertices, arestas, "B", "S", 1, ['I', 'E']))
 print(dijkstraCarga(vertices, arestas, "A", "g", 3, ['L', 'S', 'U', 'a']))
 print(dijkstraCarga(vertices, arestas, "A", "g", 2, ['L', 'S', 'U', 'a']))
 print(dijkstraCarga(vertices, arestas, "A", "g", 1, ['L', 'S', 'U', 'a']))
+print(dijkstraCarga(vertices, arestas, "g", "A", 5, ['L', 'S', 'U', 'a']))
