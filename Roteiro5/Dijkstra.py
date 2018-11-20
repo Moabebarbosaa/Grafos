@@ -45,6 +45,7 @@ def dijkstra(vertices, arestas, u, v):
             if aaa == atual:
                 lista.append(atual)
                 atual = pi[atual]
+                break
 
     lista.append(atual)
 
