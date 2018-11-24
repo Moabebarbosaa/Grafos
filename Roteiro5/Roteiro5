@@ -66,11 +66,7 @@ def dijkstraCarga(vertices, arestas, u, v, carga, pontosRecarga):
     inicial = u
     pontosRecarga.insert(0, u)
     pontosRecarga.append(v)
-
-    # if dijkstra(vertices, arestas, u, v)[0] <= carga:
-    #     return dijkstra(vertices, arestas, u, v)[1]
-    #
-    # else:
+    
     possibilidades = {}
 
     for i in range(len(pontosRecarga)):
