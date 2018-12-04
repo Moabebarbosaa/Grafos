@@ -1,4 +1,4 @@
-# Roteiros De Aula - Moabe Barbosa Alves
+# Roteiros De Aula - Teoria dos Grafos
 
 # Roteiro 1 - Lista de Adjacência
   - Pares de vértices não adjacentes.
